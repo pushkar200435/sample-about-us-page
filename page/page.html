@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Craze - About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #30085A;
+            --light-purple: #9B51E0;
+            --pink-accent: #FF6B6B;
+            --gold-accent: #B9975B;
+            --text-white: #FFFFFF;
+            --text-gray: #D2D2D2;
+            --bg-light: #FFFFFF;
+            --bg-dark-section: #F7F7FD;
+            --card-border: #E8E8E8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: #4F4F4F;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        .header {
+            background-color: var(--primary-purple);
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, var(--light-purple) 0%, var(--pink-accent) 100%);
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--primary-purple);
+            color: var(--text-white);
+            padding: 220px 0 150px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150"><path fill="%23ffffff" fill-rule="evenodd" d="M0,150 L1440,150 L1440,0 C1293.84003,96.0955569 1121.82138,144.143335 924,144.143335 C612,144.143335 456,48.0477783 0,0 L0,150 Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .hero h1 span {
+            border-bottom: 4px solid var(--gold-accent);
+            padding-bottom: 5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 650px;
+            margin: 30px auto 40px;
+        }
+
+        .hero-buttons .btn {
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+
+        .hero-buttons .btn-primary {
+            background-color: var(--text-white);
+            color: var(--primary-purple);
+        }
+
+        .hero-buttons .btn-secondary {
+            border: 1px solid var(--text-white);
+        }
+
+        /* --- Machine Learning Section --- */
+        .machine-learning {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .machine-learning .container {
+            max-width: 850px;
+        }
+        
+        .section-subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold-accent);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .section-subtitle img {
+            width: 30px;
+        }
+
+        .machine-learning h2 {
+            font-size: 40px;
+            color: #1d1d1d;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+
+        .machine-learning p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* --- Trusted By Section --- */
+        .trusted-by {
+            padding: 40px 0 80px;
+        }
+
+        .trusted-by .container {
+            text-align: center;
+        }
+
+        .trusted-by h3 {
+            font-size: 16px;
+            color: #828282;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+        }
+        
+        .logos img {
+            height: 25px;
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonials {
+            background-color: #F0F4FF;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonials h2 {
+            font-size: 40px;
+            color: #1d1d1d;
+            font-weight: 600;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-card {
+            min-width: 50%;
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 0 15px;
+            flex-shrink: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .testimonial-card p::before {
+            content: '“';
+            font-size: 80px;
+            font-weight: 700;
+            color: var(--light-purple);
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            opacity: 0.2;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .testimonial-author-info span {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .slider-dots {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .dot.active {
+            background-color: var(--light-purple);
+        }
+        
+        /* This is a simplified background for demonstration */
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAEAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAeEAABAwQDAAAAAAAAAAAAAAABAAIDBBEhIjGBkf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwCd10fxSvtEOA1wJKDeRslEpdX//Z');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+
+        /* --- Who We Are Section --- */
+        .who-we-are {
+            padding: 100px 0;
+        }
+        
+        .who-we-are-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .who-we-are-content {
+            background-color: var(--primary-purple);
+            color: var(--text-white);
+            padding: 80px 60px;
+            border-radius: 15px;
+        }
+        
+        .who-we-are-content h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: var(--gold-accent);
+        }
+        
+        .who-we-are-content h2 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--gold-accent);
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .who-we-are-content p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .what-we-do-content {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .phone-mockup {
+            position: absolute;
+            left: -140px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 280px;
+            height: 560px;
+            background: #fff;
+            border: 10px solid #e0e0e0;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup img {
+            width: 100px;
+        }
+        
+        .what-we-do-content h2 {
+            font-size: 40px;
+            font-weight: 600;
+            color: #1d1d1d;
+            margin-bottom: 20px;
+        }
+        
+        .what-we-do-content p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .what-we-do-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .what-we-do-list li {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* --- Stats Section --- */
+        .stats {
+            padding: 60px 0 100px;
+            text-align: center;
+        }
+        
+        .stats-intro {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+        
+        .stats-intro h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1d1d1d;
+            line-height: 1.4;
+        }
+        
+        .stats-intro h2 span {
+            color: var(--light-purple);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .stat-item {
+            background: #fff;
+            padding: 30px;
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+        }
+        
+        .stat-item .number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-purple);
+        }
+        
+        .stat-item .label {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* --- Team Section --- */
+        .team {
+            padding: 100px 0;
+            background-color: var(--bg-dark-section);
+            text-align: center;
+        }
+
+        .team .container {
+            max-width: 960px;
+        }
+
+        .team h2 {
+            font-size: 40px;
+            color: #1d1d1d;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .team > p {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+        }
+
+        .team-member-main {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            text-align: left;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+        }
+        
+        .team-member-main img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .team-member-info h4 {
+            font-size: 14px;
+            color: var(--gold-accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .team-member-info h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1d1d1d;
+            margin: 5px 0 15px;
+        }
+        
+        .team-member-info p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .skills-pills {
+            background-color: var(--primary-purple);
+            color: var(--text-white);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .progress-bar {
+            margin-top: 25px;
+        }
+        
+        .progress-bar .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .progress {
+            height: 8px;
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--light-purple) 0%, var(--pink-accent) 100%);
+            border-radius: 4px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .team-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .team-card img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .team-card-info {
+            padding: 20px;
+        }
+
+        .team-card-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .team-card-info span {
+            color: #777;
+        }
+        
+        .team-card-placeholder {
+             background-color: #30085A;
+             border-radius: 10px;
+             height: 100%;
+             min-height: 300px;
+        }
+        
+        .plus-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--light-purple);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- Global Section --- */
+        .global {
+            padding: 100px 0;
+            background-color: var(--primary-purple);
+            color: var(--text-white);
+        }
+        
+        .global-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .global-text h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+        }
+        
+        .global-text h2 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .global-text p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+        
+        .global-map img {
+            width: 100%;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            padding: 100px 0;
+            background-color: #F7F7FD;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            background: #fff;
+        }
+        
+        .contact-info {
+            background: var(--primary-purple);
+            color: var(--text-white);
+            padding: 80px 60px;
+        }
+        
+        .contact-info h2 {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info a {
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-form {
+            padding: 80px 60px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--card-border);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .form-submit {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(90deg, var(--light-purple) 0%, var(--pink-accent) 100%);
+            color: var(--text-white);
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* --- Google Review & Mutual Respect --- */
+        .google-review {
+            text-align: center;
+            padding: 50px 0;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        .google-review .container {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             gap: 20px;
+        }
+
+        .google-review p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .google-review img {
+            height: 30px;
+        }
+        
+        .mutual-respect {
+            padding: 100px 0;
+            background-color: var(--primary-purple);
+            color: var(--text-white);
+        }
+        
+        .mutual-respect-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .mutual-respect-text h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+        }
+        
+        .mutual-respect-text h2 {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+        
+        .mutual-respect-text p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .mutual-respect-text .btn-secondary {
+            border: 1px solid var(--text-white);
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        
+        .mutual-respect-graphic {
+            /* Placeholder for the graphic */
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--pink-accent);
+            position: relative;
+            margin: auto;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            padding: 80px 0 40px;
+            background: #fff;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-about .logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .footer-links h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #555;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-purple);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--card-border);
+        }
+        
+        .footer-bottom p {
+            color: #828282;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-icons a {
+            color: #555;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <img src="images\page1.png" alt="Code Craze Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Case studies</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">More ▾</a></li>
+            </ul>
+            <a href="#" class="cta-button">Let's talk</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content container">
+                <h1>Build smarter with <span>top-tier AI</span> experts.</h1>
+                <p>We design AI and data solutions that blend speed with intelligence. From pre-seed to enterprise, we help brands scale smarter.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Read our blog</a>
+                    <a href="#" class="btn btn-secondary">Let's talk</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Machine Learning Section -->
+        <section class="machine-learning">
+            <div class="container">
+                <div class="section-subtitle">
+                    <img src="images/wavy line.jpg" alt="wavy lines accent">
+                    MACHINE LEARNING
+                </div>
+                <h2>We help future-focused brands harness the power of AI and data to solve real business challenges.</h2>
+                <p>As business data continues to grow, so does complexity. We design AI, ML, and BI solutions that turn this complexity into clarity— enabling smarter decisions, faster operations, and measurable outcomes. Our approach is rooted in alignment. Every solution we deliver is tailored to your business logic, scale, and goals. From identifying build needs, to deploying full-stack systems, we ensure AI not only fits—but fuels—your growth.</p>
+            </div>
+        </section>
+
+        <!-- Trusted By Section -->
+        <section class="trusted-by">
+            <div class="container">
+                <h3>Trusted by leading enterprises</h3>
+                <div class="logos">
+                    <img src="images\Netflix-new-icon.png" alt="Netflix">
+                    <img src="images\Amazon_icon.png" alt="Amazon">
+                    <img src="images\Google__G__logo.svg.webp" alt="Facebook">
+                    <img src="images\facebook-logo-facebook-icon-transparent-free-png.webp" alt="Google">
+                    <img src="images\circle-linkedin-512.webp" alt="Linkedin">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What everyone says</h2>
+                <div class="testimonial-slider-wrapper" style="overflow: hidden;">
+                  <div class="testimonial-slider">
+                      <div class="testimonial-card">
+                          <p>If you are looking for an experienced and reliable Machine Learning agency, I can highly recommend Code Craze. Their team of experts is super skillful and ugly prepares individual technological and ai, ml solutions.</p>
+                          <div class="testimonial-author">
+                              <img src="images\download.jpg" alt="Ron Heline">
+                              <div class="testimonial-author-info">
+                                  <h4>Ron Heline</h4>
+                                  <span>Financial Counselor</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial-card">
+                          <p>If you are looking for an experienced and reliable Machine Learning agency, I can highly recommend Code Craze. Their team of experts is super skillful and ugly prepares individual technological and ai, ml solutions.</p>
+                          <div class="testimonial-author">
+                              <img src="images\download.jpg" alt="Ron Heline">
+                              <div class="testimonial-author-info">
+                                  <h4>Ron Heline</h4>
+                                  <span>Financial Counselor</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="testimonial-card">
+                           <p>Code Craze delivered a high-quality platform that satisfied all project requirements. The team was responsive and communicative, ensuring a smooth workflow. Their impressive technical expertise and innovative approach were hallmarks of their work.</p>
+                           <div class="testimonial-author">
+                              <img src="images\download.jpg" alt="Phil Hamberg">
+                              <div class="testimonial-author-info">
+                                  <h4>Phil Hamberg</h4>
+                                  <span>Tech Lead</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who We Are Section -->
+        <section class="who-we-are">
+            <div class="container who-we-are-grid">
+                <div class="who-we-are-content">
+                    <h3>GET TO KNOW US BETTER</h3>
+                    <h2>Who We Are</h2>
+                    <p>At Code Craze, we are a collective of AI engineers, creative technologists, and experience designers—united by one goal: blending intelligence with imagination.</p>
+                    <p>We help you solve the two priorities of your data through AI, ML, and automation: the first part is good alignment with your established, and second is to help you scale your startup to enterprise or along with it.</p>
+                    <p>We grow with your startup, building tools that scale as your business does.</p>
+                </div>
+                <div class="what-we-do-content">
+                    <div class="phone-mockup">
+                        <img src="images\page1.png" alt="Code Craze Logo in Phone">
+                    </div>
+                    <h2>What we do</h2>
+                    <p>At Code Craze, we don’t expand you to know the solution; you bring us the challenge. Our cross-functional team of AI experts, data engineers, and solution architects will design the right approach using:</p>
+                    <ol class="what-we-do-list">
+                        <li>1. Artificial Intelligence & LLMs</li>
+                        <li>2. Generative AI Systems</li>
+                        <li>3. Data Engineering & Analytics</li>
+                        <li>4. Machine Learning & Our value vision</li>
+                    </ol>
+                    <p>From strategy and/or designing to a rapid then and building, we guide you during every step— making sure the leash fits your goals, and the solution works from day one.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-intro">
+                    <h2>We implement AI-driven solutions to <span>accelerate</span> business growth</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="number">40+</div>
+                        <div class="label">AI Experts</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">200</div>
+                        <div class="label">We are part of a group of over 200</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">40+</div>
+                        <div class="label">Finished projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">10+</div>
+                        <div class="label">Different industries</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team">
+            <div class="container">
+                <h2>Meet our team</h2>
+                <p>At Code Craze, we’re a collective of AI engineers, creative technologists, and experience designers—united by one goal: blending intelligence with imagination.</p>
+                <div class="team-member-main">
+                    <img src="images\pushkar pic.jpg" alt="Pushkar Karmakar">
+                    <div class="team-member-info">
+                        <h4>OCTOBER SKY 2022</h4>
+                        <h3>Pushkar Karmakar</h3>
+                        <p>I am Pushkar Karmakar, a seasoned full-stack web developer with many years of experience in web development using Python and Django as well as DevOps. I am equipped with the expertise to lead teams in tackling complex challenges, architecting scalable solutions from the ground up to building ML models.</p>
+                        <div class="skills-pills">Python, full-stack web development, DevOps, cloud development and project management</div>
+                        <div class="contact-info-item"><span>Experience: <strong>7 Years</strong></span></div>
+                        <div class="contact-info-item"><span>Email: <strong>pushkar11@gmail.com</strong></span></div>
+                        <div class="contact-info-item"><span>Phone: <strong>+91-881-066-XXXX</strong></span></div>
+                        <div class="progress-bar">
+                            <div class="skill-name"><span>Development</span><span>85%</span></div>
+                            <div class="progress"><div class="progress-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="skill-name"><span>Project management</span><span>70%</span></div>
+                            <div class="progress"><div class="progress-fill" style="width: 70%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="images\karamveer pic.jpg" alt="Karamveer Singh">
+                        <div class="team-card-info">
+                            <h4>Karamveer Singh</h4>
+                            <span>Business Development Manager</span>
+                        </div>
+                        <div class="plus-icon">+</div>
+                    </div>
+                    <div class="team-card team-card-placeholder">
+                         <div class="plus-icon">+</div>
+                    </div>
+                    <div class="team-card team-card-placeholder">
+                         <div class="plus-icon">+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Section -->
+        <section class="global">
+            <div class="container global-content">
+                <div class="global-text">
+                    <h3>SPEED</h3>
+                    <h2>We are operating globally</h2>
+                    <p>Entrepreneurs from all over the world trust us. It inspires us to consistently broaden our perspectives as every project is a new challenge.</p>
+                </div>
+                <div class="global-map">
+                    <img src="images\world map.jpg" alt="World Map">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Let's discuss a solution for you</h2>
+                        <h4>Pushkar Karmakar</h4>
+                        <p>will help you estimate your project.</p>
+                        <a href="mailto:pushkar11@gmail.com">pushkar11@gmail.com</a>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-grid">
+                            <div class="form-group"><input type="text" placeholder="Your name"></div>
+                            <div class="form-group"><input type="email" placeholder="Email address"></div>
+                            <div class="form-group"><input type="tel" placeholder="Phone"></div>
+                            <div class="form-group"><input type="text" placeholder="Subject"></div>
+                            <div class="form-group full-width"><input type="text" placeholder="Company Name"></div>
+                            <div class="form-group full-width"><textarea placeholder="Write a message"></textarea></div>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Google Review Section -->
+        <section class="google-review">
+            <div class="container">
+                 <p>Our customers love to work with us, check our reviews at</p>
+                 <img src="images\Google__G__logo.svg.webp" alt="Google">
+            </div>
+        </section>
+
+        <!-- Mutual Respect Section -->
+        <section class="mutual-respect">
+            <div class="container mutual-respect-content">
+                <div class="mutual-respect-text">
+                    <h3>CHECK HOW IT IS TO WORK WITH Code Craze</h3>
+                    <h2>we believe in mutual respect and transparency</h2>
+                    <p>At Code Craze, collaboration isn't just a means to an end; it's the pattern. We believe great results come from it. Just as importantly, we value respect, transparency, and shared ambition. Every project is a partnership where we win, learn, and iterate as one.</p>
+                    <a href="#" class="btn-secondary">See what services we offer</a>
+                </div>
+                <div class="mutual-respect-graphic">
+                    <!-- This would be an SVG or a more complex div structure in a real project -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images\page1.png" alt="Code Craze Logo" class="logo">
+                    <p>Empowering businesses with cutting-edge AI solutions to drive innovation and growth.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>PRODUCT</h4>
+                    <ul>
+                        <li><a href="#">AI/ML</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Research</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Code Craze 2024. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#">f</a>
+                    <a href="#">t</a>
+                    <a href="#">in</a>
+                    <a href="#">X</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Testimonial Slider
+        const slider = document.querySelector('.testimonial-slider');
+        const dots = document.querySelectorAll('.dot');
+        const cards = document.querySelectorAll('.testimonial-card');
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 30; // a decent guess for margin between cards
+        
+        // We only have 2 dots, so we manage 2 states/positions.
+        // We'll show cards 1&2, then 2&3.
+        function currentSlide(index) {
+            if(index === 0) {
+                 slider.style.transform = translateX(0px);
+            }
+            if(index === 1) {
+                // Move by the width of one card plus the gap.
+                 slider.style.transform = translateX(-${cardWidth + gap}px);
+            }
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
